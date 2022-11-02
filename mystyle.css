@@ -1,0 +1,42 @@
+
+
+body
+{
+    text-align:center;
+    font-family: "Courier New", Courier, monospace;
+    background-color: rgb(163, 167, 167);
+}
+
+
+h1
+{
+    color: rgb(16, 86, 51);
+    font-size: 3em;
+    text-align:center;
+    border:5px solid ;
+}
+
+label
+{
+    padding:10px;
+}
+
+div
+{
+    padding: 10px;
+}
+
+.main-title{
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.italic{
+    font-style: italic;
+}
+
+footer
+{
+    padding: 10px;
+    text-align: left;
+}
