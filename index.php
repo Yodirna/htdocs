@@ -27,7 +27,8 @@
                 <li class="nav-item">
                 <a class="nav-link" href="#">BOOKING</a>
                 </li>
-                <button type="button" class="btn btn-outline-light">LOGIN</button>
+                <a href="loginbs.php" class="btn btn-outline-light">LOGIN</a>
+
             </ul>
             </div>
         </div>
@@ -54,6 +55,21 @@
                 <span class="visually-hidden">Next</span>
             </button>
             </div>
+    </div>
+    <div class="stuff_inbetween">
+        <h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, laboriosam? Earum alias voluptatibus minus consequatur ea iure amet aspernatur cum, nemo deserunt ullam nulla nostrum quia minima atque quisquam. Quasi?
+            </p>
+        </h1>
+    </div>
+    <div>
+        <li>
+            <a class="link" href="hilfebs.php">HILFE</a>
+        </li>
+        <li>
+            <a class="link" href="impressumbs.php">IMPRESSUM</a>
+        </li>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
