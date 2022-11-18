@@ -52,7 +52,7 @@
             Hier geht es zur <a href="registerbs.php">Registrierung</a>
         </div>
 
-        <footer class="footer bg-light text-center text-lg-start fixed-bottom">
+        <footer class="footer text-center text-lg-start fixed-bottom">
         <div>
             <li>
                 <a class="link" href="hilfebs.php">HILFE</a>
