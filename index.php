@@ -33,7 +33,7 @@
         include_once $site . ".php";
     ?>
 
-    <footer class="bg-light text-center text-lg-start">
+    <footer class="footer bg-light text-center text-lg-start fixed-bottom">
         <div>
             <li>
                 <a class="link" href="hilfebs.php">HILFE</a>
