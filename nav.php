@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light navbar-expand-lg bg-light">
+<nav class="navbar navbar-light navbar-expand-lg bg-light" style="background-color: #B85042">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="#">
