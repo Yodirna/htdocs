@@ -15,12 +15,4 @@ body {
     background-color: #A7BEAE;
     padding: 10px;
   }
-  
-<style>
-      <?php include "bgstyle.css" ?>
-    </style>
 
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark mb-3" style="background-color: #B85042;">
