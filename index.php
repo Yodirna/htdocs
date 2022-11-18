@@ -13,7 +13,7 @@
 <body>
 
     <?php
-        // fetch current "site" (or set to "home" if not defined)        
+        // fetch current "site" (or set to "home" if not defined)
         $site = $_GET["site"] ?? "home";
 
         // for security reasone:  check if $site is in a list of available sites
