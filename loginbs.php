@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark mb-3" style="background-color: #B85042;">
+    <nav class="navbar navbar-expand-lg navbar-dark mb-3" style="background-color: #B85042">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.php">Hillton Hotel</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +50,16 @@
             Haben Sie noch kein Konto?
             Hier geht es zur <a href="registerbs.php">Registrierung</a>
         </div>
+        <footer class="footer fixed-bottom">
+        <div>
+            <li>
+                <a class="link" href="hilfebs.php">HILFE</a>
+            </li>
+            <li>
+                <a class="link" href="impressumbs.php">IMPRESSUM</a>
+            </li>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 
