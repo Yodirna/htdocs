@@ -21,7 +21,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">BOOKING</a>
                     </li>
-                        <a href="loginbs.php" class="btn btn-outline-light">LOGIN</a>
+                        <a href="loginbs.php" class="btn btn-outline-dark">LOGIN</a>
                 </ul>
             </div>
         </div>

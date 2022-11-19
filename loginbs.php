@@ -23,7 +23,7 @@
       <div class="txt_field">
         <input type="password" placeholder="PASSWORD" required>
       </div>
-      <input type="submit" value="Login">
+      <input class="btn btn-outline-light" type="submit" value="LOGIN">
       <div class="help">
         <a href="help.php">CAN'T SIGN IN?</a>
       </div>
