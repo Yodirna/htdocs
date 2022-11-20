@@ -1,13 +1,14 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #E7E8D1;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #E7E8D1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
+  
   .center_signup{
     position: absolute;
     top: 50%;

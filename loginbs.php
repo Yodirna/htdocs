@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <?php include_once "nav.php"?>
+
 
 
   <div class="center">
@@ -31,12 +31,25 @@
         <a href="help.php">CAN'T SIGN IN?</a>
       </div>
       <div class="create">
-        <a href="signup.php">CREATE ACCOUNT</a>
+        <a class="create <?= ($site == "signup") ? "active" : "" ?>" href="?site=signup">CREATE ACCOUNT</a>
       </div>
     </form>
   </div>
 
-  <?php include "footer.php" ?>
+  <?php
+        // fetch current "site" (or set to "home" if not defined)
+        $site = $_GET["site"] ?? "loginbs";
+
+        $sites = [ "login", "support", "signup"];
+        if (!in_array($site, $sites)) {
+            $error = "Seite nicht gefunden - " . $site;
+            $site = "error";    
+        }
+    ?>
+    <?php
+
+        include_once $site . ".php";
+    ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>

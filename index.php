@@ -9,13 +9,12 @@
 </head>
 <body>
     <style> <?php include "style.css" ?> </style>
-
     <?php
         // fetch current "site" (or set to "home" if not defined)
-        $site = $_GET["site"] ?? "home";
+        $site = $_GET["site"] ?? "news";
 
         // for security reasone:  check if $site is in a list of available sites
-        $sites = [ "home", "loginbs", "registerbs", "impressumbs", "hilfebs"];
+        $sites = [ "news", "booking", "support", "loginbs", "support", "signup"];
         if (!in_array($site, $sites)) {
             $error = "Seite nicht gefunden - " . $site;
             $site = "error";    
@@ -24,13 +23,11 @@
         // render nav bar
         include_once "nav.php";
     ?>
-
     <?php
 
         // render site here ...
         include_once $site . ".php";
     ?>
-    <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, harum, dolorem amet sapiente beatae quisquam numquam rerum praesentium adipisci corrupti quo possimus accusamus temporibus ullam repellendus unde minus sunt excepturi.</p></div>
     <?php include_once "footer.php" ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

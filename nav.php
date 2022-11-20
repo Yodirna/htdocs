@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAVBAR</title>
-</head>
-<body>
 <nav class="navbar navbar-dark fixed-top navbar-expand-lg" style="background-color: #B85042;">
         <div class="container-fluid">
             <a class="navbar-brand">HILLTON</a>
@@ -17,23 +8,22 @@
             <div class="collapse navbar-collapse" id="navbarNavButton">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">NEWS</a>
+                        <a class="nav-link <?= ($site == "news") ? "active" : "" ?>" aria-current="page" href=".">NEWS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">BOOKING</a>
+                        <a class="nav-link <?= ($site == "link") ? "active" : "" ?>" href="#">BOOKING</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">SUPPORT</a>
+                        <a class="nav-link <?= ($site == "support") ? "active" : "" ?>" href="#">SUPPORT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="loginbs.php">LOGIN</a>
+                        <a class="nav-link <?= ($site == "login") ? "active" : "" ?>" href="?site=loginbs">LOGIN</a>
                     </li>
                 </ul>
             </div>
         </div>
 </nav>
-</body>
-</html>
+
 
 
 
