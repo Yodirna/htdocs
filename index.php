@@ -9,12 +9,13 @@
 </head>
 <body>
     <style> <?php include "style.css" ?> </style>
+    <?php session_start(); ?>
     <?php
         // fetch current "site" (or set to "home" if not defined)
         $site = $_GET["site"] ?? "news";
 
         // for security reasone:  check if $site is in a list of available sites
-        $sites = [ "news", "booking", "support", "loginbs", "support", "signup"];
+        $sites = [ "news", "booking", "support", "loginbs", "logout", "upload", "check_bookings", "support_tickets", "signup"];
         if (!in_array($site, $sites)) {
             $error = "Seite nicht gefunden - " . $site;
             $site = "error";    

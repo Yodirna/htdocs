@@ -15,7 +15,7 @@
                 <div class ="row align-items-center mt-3 g-3 ">
                     <div class="col-md-12">
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GENDER</button>
+                            <button class="btn dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GENDER</button>
                                 <div class="dropdown-menu" aria-labelledby="triggerId">
                                     <a class="dropdown-item">FEMALE</a>
                                     <a class="dropdown-item">MALE</a>
@@ -42,7 +42,7 @@
                             <input type="password" class="form-control" placeholder="CONFIRM PASSWORD" required>
                         </div>
                         <div class="container mt-3">
-                        <button type="button" class="btn btn-outline-primary">Submit</button>
+                        <button type="button" class="btn btn-outline-primary">SIGN UP</button>
                         </div>
                 </div> 
             </div>
