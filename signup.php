@@ -44,7 +44,7 @@
                             <input type="password" name="pw2" class="form-control" placeholder="CONFIRM PASSWORD" required>
                         </div>
                         <div class="container mt-3">
-                        <button type="submit" id="submitButton" name="submitButton" class="btn btn-outline-primary">SIGN UP</button>
+                        <input type="submit" id="submitButton" name="submitButton" class="btn btn-outline-light" value="SIGN UP"></input>
                         </div>
                 </div> 
             </div>
