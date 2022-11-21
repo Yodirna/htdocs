@@ -20,6 +20,19 @@
     text-align: center;
 }
 
+.col p{
+    padding-top: 40px;
+}
+
+.col a:link{
+    text-decoration: none;
+    color: #B85042;
+}
+
+.col h1{
+    color: #B85042;
+}
+
 .responsive {
     max-width: 50%;
     height: auto;
