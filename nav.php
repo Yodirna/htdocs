@@ -31,7 +31,7 @@
                             <a class="nav-link <?= ($site == "support") ? "active" : "" ?>" href="#">SUPPORT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?= ($site == "login") ? "active" : "" ?>" href="?site=loginbs">LOGIN</a>
+                            <a class="nav-link <?= ($site == "login") ? "active" : "" ?>" href="?site=login">LOGIN</a>
                         </li>
                     <?php } ?>
                 </ul>

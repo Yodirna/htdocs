@@ -19,7 +19,7 @@
       $_SESSION['userid'] = 'admin';
       $_SESSION['login_time'] = time();
       $message = 'Successful login, welcome back Admin.';
-      echo $message;
+      echo "<script>alert('$message')</script>"; 
       header('Refresh: 1; URL = index.php?site=upload.php');
     } else {
       $message = 'Wrong username or password.';
