@@ -12,15 +12,17 @@
     <div class="center_signup">
         <h1>CREATE AN ACCOUNT</h1>
         <form method="POST">
-                <div class ="row align-items-center mt-3 g-3 ">
+                <div class ="row align-items-center g-3 ">
                     <div class="col-md-12">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GENDER</button>
-                                <div class="dropdown-menu" aria-labelledby="triggerId">
-                                    <a class="dropdown-item">FEMALE</a>
-                                    <a class="dropdown-item">MALE</a>
-                                    <a class="dropdown-item">RATHER NOT SAY</a>
-                                </div>
+                        <div class="btn-group" role="group" aria-label="radio toggle btn group">
+                                <input type="radio" class="btn-check" name="btnradio" id="male" autocomplete="off" >
+                                <label class="btn btn-outline-primary" for="male">MALE</label>
+
+                                <input type="radio" class="btn-check" name="btnradio" id="female" autocomplete="off" >
+                                <label class="btn btn-outline-primary" for="female">FEMALE</label>
+
+                                <input type="radio" class="btn-check" name="btnradio" id="rns" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="rns">RATHER NOT SAY</label>
                         </div>
                     </div>
                         <div class="col-md-6">
