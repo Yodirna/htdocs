@@ -15,7 +15,7 @@
                 <div class ="row align-items-center g-3 ">
                     <div class="col-md-12">
                         <div class="btn-group" role="group" aria-label="radio toggle btn group">
-                                <input type="radio" class="btn-check" name="btnradio" id="male" value="male" autocomplete="off" >
+                                <input type="radio" class="btn-check" name="btnradio" id="male" value="male" autocomplete="off" required>
                                 <label class="btn btn-outline-primary" for="male">MALE</label>
 
                                 <input type="radio" class="btn-check" name="btnradio" id="female" value="female" autocomplete="off" >
