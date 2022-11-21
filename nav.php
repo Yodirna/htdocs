@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse" id="navbarNavButton">
                 <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                            <a class="nav-link <?= ($site == "news") ? "active" : "" ?>" aria-current="page" href=".">NEWS</a>
+                            <a class="nav-link <?= ($site == "news") ? "active" : "" ?>" href="?site=news">NEWS</a>
                         </li>
                     <?php if (@$_SESSION['userid'] == 'admin') { ?>
                         <li class="nav-item">
