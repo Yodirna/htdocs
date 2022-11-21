@@ -17,10 +17,12 @@
   {
   $message = 'Welcome! Here are your login details: ';
   echo "$message<br>";
+  $gender=$_POST['btnradio'];
   $name=$_POST['fname'];
   $mail=$_POST['mail'];
-  echo "$name<br>";
-  echo"$mail";
+  echo"gender:$gender<br>";
+  echo"$name<br>";
+  echo"$mail<br>";
   }
   ?>
 
