@@ -11,17 +11,17 @@
     <style> <?php include "signup.css" ?> </style>
     <div class="center_signup">
         <h1>CREATE AN ACCOUNT</h1>
-        <form method="post">
+        <form class="form-group" action="register.php" method="post">
                 <div class ="row align-items-center g-3 ">
                     <div class="col-md-12">
                         <div class="btn-group" role="group" aria-label="radio toggle btn group">
-                                <input type="radio" class="btn-check" name="btnradio" id="male" autocomplete="off" >
+                                <input type="radio" class="btn-check" name="btnradio" id="male" value="male" autocomplete="off" >
                                 <label class="btn btn-outline-primary" for="male">MALE</label>
 
-                                <input type="radio" class="btn-check" name="btnradio" id="female" autocomplete="off" >
+                                <input type="radio" class="btn-check" name="btnradio" id="female" value="female" autocomplete="off" >
                                 <label class="btn btn-outline-primary" for="female">FEMALE</label>
 
-                                <input type="radio" class="btn-check" name="btnradio" id="rns" autocomplete="off">
+                                <input type="radio" class="btn-check" name="btnradio" id="rns" value="rns" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="rns">RATHER NOT SAY</label>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                             <input type="password" class="form-control" placeholder="CONFIRM PASSWORD" required>
                         </div>
                         <div class="container mt-3">
-                        <button type="button" class="btn btn-outline-primary">SIGN UP</button>
+                        <button type="submit" id="submitButton" name="submitButton" class="btn btn-outline-primary">SIGN UP</button>
                         </div>
                 </div> 
             </div>
