@@ -26,22 +26,22 @@
                         </div>
                     </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="FIRST NAME" required>
+                            <input type="text" name="fname" class="form-control" placeholder="FIRST NAME" required>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="LAST NAME" required>
+                            <input type="text" name="lname" class="form-control" placeholder="LAST NAME" required>
                         </div>
                         <div class="col-md-12">
-                            <input type="email" class="form-control" placeholder="SUPPORT@HILLTON.AT" required>
+                            <input type="email" name="mail" class="form-control" placeholder="SUPPORT@HILLTON.AT" required>
                         </div>
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="USERNAME" required>
+                            <input type="text" name="uname" class="form-control" placeholder="USERNAME" required>
                         </div>
                         <div class="col-md-12">
-                            <input type="password" class="form-control" placeholder="PASSWORD" required>
+                            <input type="password" name="pw" class="form-control" placeholder="PASSWORD" required>
                         </div>
                         <div class="col-md-12">
-                            <input type="password" class="form-control" placeholder="CONFIRM PASSWORD" required>
+                            <input type="password" name="pw2" class="form-control" placeholder="CONFIRM PASSWORD" required>
                         </div>
                         <div class="container mt-3">
                         <button type="submit" id="submitButton" name="submitButton" class="btn btn-outline-primary">SIGN UP</button>

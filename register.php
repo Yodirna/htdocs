@@ -9,24 +9,20 @@
 <body>
 <h1>
 <?php
-  $message = '';
-  if(($_POST['btnradio']=="male")){
-      $message = 'You are male';
-      echo $message;
-    }
-  if(($_POST['btnradio']=="female")){
-      $message = 'You are female';
-      echo $message;
-    }
-  if(($_POST['btnradio']=="rns")){
-      $message = 'Gender not given';
-      echo $message;
-    }
+
+  if(($_POST['pw']!=$_POST['pw2'])){
+    echo "Your passwords don't match";
+  }
+  else
+  {
+  $message = 'Welcome! Here are you login details: ';
+  echo $message;
+  echo $_POST['fname']; 
+  echo $_POST['mail'];
+  }
   ?>
-  
+
+
 </h1>
-  <div class="box">
-    <p>you have successfully registered your user</p>
-  </div>
 </body>
 </html>
