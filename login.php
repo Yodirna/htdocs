@@ -38,7 +38,7 @@
       </div>
       <input class="btn btn-outline-light" type="submit" name="login" value="LOGIN">
       <div class="help">
-        <a href="help.php">CAN'T SIGN IN?</a>
+        <a class="help" <?= ($site == "help") ? "active" : "" ?> href="?site=help">CAN'T SIGN IN? </a>
       </div>
       <div class="create">
         <a class="create <?= ($site == "signup") ? "active" : "" ?>" href="?site=signup">CREATE ACCOUNT</a>
