@@ -1,1 +1,1 @@
-<p>get some help</p>
+<p>Have you tried turning it off and on again?</p>
