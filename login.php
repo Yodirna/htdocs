@@ -20,10 +20,11 @@
       $_SESSION['login_time'] = time();
       $message = 'Successful login, welcome back Admin.';
       echo "<script>alert('$message')</script>"; 
-      header('Refresh: 1; URL = index.php?site=upload.php');
+      echo "<meta http-equiv='refresh' content='0'>";
     } else {
       $message = 'Wrong username or password.';
-      echo "<script>alert('$message')</script>"; 
+      echo "<script>alert('$message')</script>";
+      echo "<meta http-equiv='refresh' content='0'>";
     }
   }
   ?>

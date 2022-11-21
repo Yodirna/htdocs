@@ -1,1 +1,1 @@
-<p>get some help nigga</p>
+<p>get some help</p>
