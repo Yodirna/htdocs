@@ -7,7 +7,6 @@
     <title>NEWS/HOMEPAGE</title>
 </head>
 <body>
-    <?php include "home.php"?>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta illo, doloribus quidem quae dicta ducimus officia aliquid deserunt esse, adipisci earum quas ex impedit eum tempora cumque libero quod. Nobis?</p>
 </body>
 </html>
