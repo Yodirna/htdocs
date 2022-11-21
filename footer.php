@@ -10,7 +10,9 @@
     <div class="footer-basic">
             <footer>
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">Imprint</a></li>
+                    <li class="list-inline-item">
+                        <a <?= ($site == "imprint") ? "active" : "" ?> href="?site=imprint">Imprint</a>
+                    </li>
                     <li class="list-inline-item"><a href="#">FAQ</a></li>
                     <li class="list-inline-item"><a href="#">Terms of service</a></li>
                     <li class="list-inline-item"><a href="#">Privacy Policy</a></li>

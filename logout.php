@@ -1,5 +1,7 @@
 <?php
 unset($_SESSION['userid']);
 session_destroy();
-header('Refresh: 0; URL = index.php?site=loginbs');
+$message = 'Successfully logged out.';
+echo "<script>alert('$message')</script>"; 
+header('Refresh: 1; URL = index.php?site=loginbs');
 ?>
