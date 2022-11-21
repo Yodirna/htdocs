@@ -20,9 +20,9 @@
   $gender=$_POST['btnradio'];
   $name=$_POST['fname'];
   $mail=$_POST['mail'];
-  echo"gender:$gender<br>";
-  echo"$name<br>";
-  echo"$mail<br>";
+  echo"gender: $gender<br>";
+  echo"username: $name<br>";
+  echo"mail: $mail<br>";
   }
   ?>
 
