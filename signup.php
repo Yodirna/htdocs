@@ -11,7 +11,7 @@
     <style> <?php include "signup.css" ?> </style>
     <div class="center_signup">
         <h1>CREATE AN ACCOUNT</h1>
-        <form method="POST">
+        <form method="post">
                 <div class ="row align-items-center g-3 ">
                     <div class="col-md-12">
                         <div class="btn-group" role="group" aria-label="radio toggle btn group">
