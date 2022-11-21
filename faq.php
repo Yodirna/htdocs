@@ -1,9 +1,15 @@
-<style><?php include "imprintstyle.css" ?></style>
+<style><?php include "faq.css" ?></style>
 
-<div class="faqtext">
-    <div class="text">
+<div class="faq-text">
+    <div class="faqtext">
         <p><h1>FAQ</h1>
         Wo finde ich das Impressum?<br>
-        Unten<br></p>
+        Unten.<br>
+        Wo finde ich die FAQ?<br>
+        Unten.<br>
+        Frage 3<br>
+        Antwort 3<br>
+        Frage 4<br>
+        Antwort 4<br></p>
     </div>
 </div>
