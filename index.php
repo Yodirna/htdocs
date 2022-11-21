@@ -9,6 +9,7 @@
     <style> <?php include "style.css" ?> </style>
 </head>
 <body>
+    <?php session_start(); ?>
     <?php
         // fetch current "site" (or set to "home" if not defined)
         $site = $_GET["site"] ?? "home";
