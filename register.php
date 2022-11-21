@@ -15,10 +15,12 @@
   }
   else
   {
-  $message = 'Welcome! Here are you login details: ';
-  echo $message;
-  echo $_POST['fname']; 
-  echo $_POST['mail'];
+  $message = 'Welcome! Here are your login details: ';
+  echo "$message<br>";
+  $name=$_POST['fname'];
+  $mail=$_POST['mail'];
+  echo "$name<br>";
+  echo"$mail";
   }
   ?>
 
