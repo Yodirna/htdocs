@@ -15,13 +15,16 @@
   }
   else
   {
-  $message = 'Welcome! Here are you login details: ';
-  echo $message;
-  echo $_POST['fname']; 
-  echo $_POST['mail'];
+  $message = 'Welcome! Here are your login details: ';
+  echo "$message<br>";
+  $gender=$_POST['btnradio'];
+  $name=$_POST['fname'];
+  $mail=$_POST['mail'];
+  echo"gender: $gender<br>";
+  echo"username: $name<br>";
+  echo"mail: $mail<br>";
   }
   ?>
-
 
 </h1>
 </body>
