@@ -28,7 +28,7 @@
     }
   }
   ?>
-  <div class="center">
+  <div class="container center1 text-center">
     <h1>SIGN IN</h1>
     <form role="form" action="" method="post">
       <div class="txt_field">

@@ -28,10 +28,9 @@ background: white;
 border-radius: 10px;
 }
 
-.center h1{
+.center1 h1{
 text-align: center;
-padding-top: 50px;
-padding-bottom: 25px;
+margin-top: 100px;
 }
 
 .center form{
@@ -65,7 +64,7 @@ transition: .5s;
 }
 
 .btn {
-position: relative;
+position: center;
 padding-left: 25px;
 padding-right: 25px;
 
