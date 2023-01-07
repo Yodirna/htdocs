@@ -9,10 +9,10 @@
 </head>
 <body>
     <style> <?php include "signup.css" ?> </style>
-    <div class="center_signup">
+    <div class="center_signup1 container">
         <h1>CREATE AN ACCOUNT</h1>
         <form class="form-group" action="register.php" method="post">
-                <div class ="row align-items-center g-3 ">
+                <div class ="row align-items-center g-3 text-center">
                     <div class="col-md-12">
                         <div class="btn-group" role="group" aria-label="radio toggle btn group">
                                 <input type="radio" class="btn-check" name="btnradio" id="male" value="male" autocomplete="off" required>
