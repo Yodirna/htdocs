@@ -9,12 +9,18 @@
     <style> <?php include "style.css" ?> </style>
 </head>
 <body>
-    <?php session_start(); ?>
+<?php
+    session_start();
+        include("connection.php");
+        include("functions.php");
+
+        $user_data = check_login($con);
+    ?>
     <?php
         // fetch current "site" (or set to "home" if not defined)
         $site = $_GET["site"] ?? "home";
 
-        // for security reasone:  check if $site is in a list of available sites
+        // for security reason:  check if $site is in a list of available sites
         $sites = [ "home", "news", "booking", "support", "login", "signup", "help", "logout", "imprint", "faq", "upload"];
         if (!in_array($site, $sites)) {
             $error = "Seite nicht gefunden - " . $site;
@@ -29,7 +35,7 @@
         // render site here ...
         include_once $site . ".php";
     ?>
-
+    <h1>This is the index page</h1>
     <?php include_once "footer.php" ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

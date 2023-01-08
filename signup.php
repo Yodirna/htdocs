@@ -9,6 +9,31 @@
 </head>
 <body>
     <style> <?php include "signup.css" ?> </style>
+    <?php
+    session_start();
+        include("connection.php");
+        include("functions.php");
+        //something was posted
+        if($_SERVER['REQUEST_METHOD'] == "POST")
+        {
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            //save to database
+            if(!empty($username) && !empty($password) && !is_numeric($username))
+            {
+                $user_id = rand(20);
+                $query = "insert into users (user_id, username, password) values ('$user_id', '$username', '$password')";
+
+                mysqli_query($con, $query);
+
+                header("location: login.php");
+                die;
+            }else
+            {
+                echo "Please enter valid information!";
+            }
+        }
+    ?>
     <div class="center_signup1 container">
         <h1>CREATE AN ACCOUNT</h1>
         <form class="form-group" action="register.php" method="post">
