@@ -1,3 +1,45 @@
+<!--bissi responsive-->
+<?php
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $email = strtolower($_POST["email"]);
+    $password = $_POST["password"];
+    //db con
+    $db_obj = new mysqli('localhost', 'jimmy', 'password', 'test');
+    $sql = "SELECT * FROM `login`";
+    $result = $db_obj->query($sql);
+
+    if ($result->num_rows > 0) {
+
+        //iteriert alle datensätz in der Datenbank
+        while($row = $result->fetch_assoc()) {
+
+            // sucht email
+            if ($email == $row["usermail"] ){
+
+                // überprüft passwort
+                if (password_verify($_POST["pw"], $row["pw"])){
+                    session_start();
+                    $_SESSION["user_id"] = $row["id"];
+
+                    $_GET["site"] = "home";
+                    include"index.php";
+                    exit();
+                }else{
+                    $error = "Password or Email dont match";
+                }
+            }else{
+                $error = "Password or Email dont match";
+            }
+        }
+    }
+    $db_obj->close();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,12 +61,15 @@
       $_SESSION['userid'] = 'admin';
       $_SESSION['login_time'] = time();
       $message = 'Successful login, welcome back Admin.';
+      session_start();
       echo "<script>alert('$message')</script>"; 
-      echo "<meta http-equiv='refresh' content='0'>";
-    } else {
+      $_GET["site"] = "home";
+        echo "<meta http-equiv='refresh' content='0; URL=http://localhost/index.php'>";
+
+        } else {
       $message = 'Wrong username or password.';
       echo "<script>alert('$message')</script>";
-      echo "<meta http-equiv='refresh' content='0'>";
+      //echo "<meta http-equiv='refresh' content='0'>";
     }
   }
   ?>

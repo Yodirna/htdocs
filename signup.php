@@ -11,32 +11,36 @@
     <style> <?php include "signup.css" ?> </style>
     <?php
     session_start();
-        include("connection.php");
-        include("functions.php");
-        //something was posted
-        if($_SERVER['REQUEST_METHOD'] == "POST")
-        {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            //save to database
-            if(!empty($username) && !empty($password) && !is_numeric($username))
-            {
-                $user_id = rand(20);
-                $query = "insert into users (user_id, username, password) values ('$user_id', '$username', '$password')";
-
-                mysqli_query($con, $query);
-
-                header("location: login.php");
-                die;
-            }else
-            {
-                echo "Please enter valid information!";
-            }
-        }
     ?>
+    
+<?php
+
+
+// erstelle variablen um später auszugeben
+$error = "";
+$success ="";
+
+
+//error handling
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (strlen($_POST["password"]) < 7) {
+        $error = "Password must be at least 7 characters!";
+
+    }
+    elseif ($_POST["pw"] !== $_POST["pw2"]) {
+        $error = "Passwords must match!";
+    }
+    else{
+        // wenn reg erfolgreich ist dann zeigt es die success seite
+        include "./signup_success.php";
+        die();
+    }
+}
+?>
+
     <div class="center_signup1 container">
         <h1>CREATE AN ACCOUNT</h1>
-        <form class="form-group" action="register.php" method="post">
+        <form class="form-group" action="./register.php" method="post">
                 <div class ="row align-items-center g-3 text-center">
                     <div class="col-md-12">
                         <div class="btn-group" role="group" aria-label="radio toggle btn group">
@@ -58,9 +62,6 @@
                         </div>
                         <div class="col-md-12">
                             <input type="email" name="mail" class="form-control" placeholder="SUPPORT@HILLTON.AT" required>
-                        </div>
-                        <div class="col-md-12">
-                            <input type="text" name="uname" class="form-control" placeholder="USERNAME" required>
                         </div>
                         <div class="col-md-12">
                             <input type="password" name="pw" class="form-control" placeholder="PASSWORD" required>

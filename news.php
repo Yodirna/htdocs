@@ -24,6 +24,11 @@
     ?>
     <!-- Display news to all users -->
     <h2>Latest News</h2>
+    <?php
+        $_GET["site"] = "home";
+
+        include"index.php";
+    ?>
     <div id="news">
       <!-- News items go here -->
     </div>

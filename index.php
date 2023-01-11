@@ -11,13 +11,13 @@
 <body>
 <?php
     session_start();
-        include("connection.php");
-        include("functions.php");
 
-        $user_data = check_login($con);
     ?>
     <?php
+
         // fetch current "site" (or set to "home" if not defined)
+
+
         $site = $_GET["site"] ?? "home";
 
         // for security reason:  check if $site is in a list of available sites
@@ -26,7 +26,6 @@
             $error = "Seite nicht gefunden - " . $site;
             $site = "error";    
         }
-
         // render nav bar
         include_once "nav.php";
     ?>
@@ -35,7 +34,6 @@
         // render site here ...
         include_once $site . ".php";
     ?>
-    <h1>This is the index page</h1>
     <?php include_once "footer.php" ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
