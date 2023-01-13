@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION["user_id"] = $row["id"];
 
                     $_GET["site"] = "home";
-                    include"index.php";
+                    include "index.php";
                     exit();
                 }else{
                     $error = "Password or Email dont match";
