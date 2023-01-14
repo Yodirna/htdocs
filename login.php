@@ -1,4 +1,6 @@
 <?php
+session_start();
+ob_start();
 //initialize error variable
 $error = "";
 
@@ -33,10 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //verify password
             if (password_verify($password, $row["password"])){
                 //start session
-                session_start();
                 $_SESSION["user_id"] = $row["id"];
-                //redirect to home page
-                header("Location: home.php");
+                $_SESSION["success"] = "You have successfully logged in!";
+                //redirect to account page
+                header("Location: index.php");
                 exit();
             }else{
                 $error = "Email or password is wrong.";
@@ -62,6 +64,10 @@ if (!empty($error)) {
     if (!empty($error)) {
     echo "<script>alert('$error')</script>";
     }
+    if (isset($_SESSION["success"])) {
+      echo "<script>alert('".$_SESSION["success"]."')</script>";
+      unset($_SESSION["success"]);
+      }
 ?>
 
 
@@ -79,25 +85,6 @@ if (!empty($error)) {
   </style>
 </head>
 <body>
-  <?php
-  $message = '';
-  if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
-    if($_POST['username'] == 'Gorilla' && $_POST['password'] == 'hotel123') {
-      $_SESSION['userid'] = 'admin';
-      $_SESSION['login_time'] = time();
-      $message = 'Successful login, welcome back Admin.';
-      session_start();
-      echo "<script>alert('$message')</script>"; 
-      $_GET["site"] = "home";
-        echo "<meta http-equiv='refresh' content='0; URL=http://localhost/index.php'>";
-
-        } else {
-      $message = 'Wrong username or password.';
-      echo "<script>alert('$message')</script>";
-      //echo "<meta http-equiv='refresh' content='0'>";
-    }
-  }
-  ?>
   <div class="container center1 text-center">
     <h1>SIGN IN</h1>
     <form role="form" action="" method="post">

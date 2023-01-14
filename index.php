@@ -1,3 +1,8 @@
+<?php
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +14,12 @@
     <style> <?php include "style.css" ?> </style>
 </head>
 <body>
+    
 <?php
-    session_start();
 
     ?>
     <?php
+
 
         // fetch current "site" (or set to "home" if not defined)
 
@@ -21,7 +27,7 @@
         $site = $_GET["site"] ?? "home";
 
         // for security reason:  check if $site is in a list of available sites
-        $sites = [ "home", "news", "booking", "support", "login", "signup", "help", "logout", "imprint", "faq", "upload", "zreservieren", "error"];
+        $sites = [ "home", "news", "booking", "support", "login", "signup", "help", "logout", "imprint", "faq", "account", "zreservieren", "error"];
         if (!in_array($site, $sites)) {
             $error = "Seite nicht gefunden - " . $site;
             $site = "error";    

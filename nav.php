@@ -10,15 +10,15 @@
                 <li class="nav-item">
                             <a class="nav-link <?= ($site == "news") ? "active" : "" ?>" href="?site=news">NEWS</a>
                         </li>
-                    <?php if (@$_SESSION['userid'] == 'admin') { ?>
+                    <?php if (isset($_SESSION['user_id'])) { ?>
                         <li class="nav-item">
-                            <a class="nav-link <?= ($site == "check_bookings") ? "active" : "" ?>" href="#">CHECK BOOKINGS</a>
+                            <a class="nav-link <?= ($site == "check_bookings") ? "active" : "" ?>" href="#">BOOK A ROOM</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?= ($site == "support_tickets") ? "active" : "" ?>" href="#">SUPPORT TICKETS</a>
+                            <a class="nav-link <?= ($site == "support_tickets") ? "active" : "" ?>" href="#">MY BOOKINGS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?= ($site == "upload") ? "active" : "" ?>" href="?site=upload">UPLOAD</a>
+                            <a class="nav-link <?= ($site == "upload") ? "active" : "" ?>" href="?site=upload">MY ACCOUNT</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link <?= ($site == "logout") ? "active" : "" ?>" href="?site=logout">LOGOUT</a>
