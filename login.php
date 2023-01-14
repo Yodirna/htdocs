@@ -1,42 +1,67 @@
-<!--bissi responsive-->
 <?php
+//initialize error variable
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $email = strtolower($_POST["email"]);
-    $password = $_POST["password"];
-    //db con
-    $db_obj = new mysqli('localhost', 'jimmy', 'password', 'test');
-    $sql = "SELECT * FROM `login`";
-    $result = $db_obj->query($sql);
-
-    if ($result->num_rows > 0) {
-
-        //iteriert alle datensätz in der Datenbank
-        while($row = $result->fetch_assoc()) {
-
-            // sucht email
-            if ($email == $row["usermail"] ){
-
-                // überprüft passwort
-                if (password_verify($_POST["pw"], $row["pw"])){
-                    session_start();
-                    $_SESSION["user_id"] = $row["id"];
-
-                    $_GET["site"] = "home";
-                    include "index.php";
-                    exit();
-                }else{
-                    $error = "Password or Email dont match";
-                }
-            }else{
-                $error = "Password or Email dont match";
-            }
-        }
+    //validate email
+    if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        $email = strtolower($_POST["email"]);
+    } else {
+        $error = "Invalid Email format.";
     }
-    $db_obj->close();
+
+    //check if error message is empty and process the form
+    if(empty($error)) {
+        $password = $_POST["password"];
+
+        //connect to the database
+        $db_obj = new mysqli('localhost', 'jimmy', 'password', 'test');
+        if ($db_obj->connect_error) {
+            die("Connection failed: " . $db_obj->connect_error);
+        }
+
+        //prepared statement to select user
+        $stmt = $db_obj->prepare("SELECT * FROM `login` WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        //check if user exists
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            //verify password
+            if (password_verify($password, $row["password"])){
+                //start session
+                session_start();
+                $_SESSION["user_id"] = $row["id"];
+                //redirect to home page
+                header("Location: home.php");
+                exit();
+            }else{
+                $error = "Email or password is wrong.";
+            }
+        } else {
+            $error = "User does not exist.";
+        }
+        //close database connection
+        $db_obj->close();
+    }
 }
+
+//check if error message is not empty and show error message
+if (!empty($error)) {
+    //store error message in session
+    $_SESSION["error"] = $error;
+    //redirect to login page
+    header("Location: login.php");
+    exit();
+}
+?>
+<?php
+    if (!empty($error)) {
+    echo "<script>alert('$error')</script>";
+    }
 ?>
 
 

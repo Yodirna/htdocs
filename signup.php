@@ -6,7 +6,6 @@ if (!isset($_SESSION)){
 // Error variable to store any error messages
 $error = "";
 
-
 // Check if the form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if email is valid
@@ -23,7 +22,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     // If all validation checks pass, include the success page
     else{
-        include "./signup_success.php";
+        // assign the form values to variables and format correctly for the db
+        $first_name = ucfirst(strtolower($_POST["fname"]));
+        $last_name = ucfirst(strtolower($_POST["lname"]));
+        $email = strtolower($_POST["email"]);
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        // check if the name cookie is set
+        if (!isset($_COOKIE["name_cookie"])){
+            // if not, set the cookie
+            setcookie("name_cookie", $last_name, time() + 600);
+        }else{
+            // if set, update the cookie
+            setcookie("name_cookie", $last_name, time() + 600);
+        }
+        // create a new mysqli object
+        $db_obj = new mysqli('localhost', 'jimmy', 'password', 'test');
+        // create the insert query
+        $sql = "INSERT INTO `login` (`first_name`, `last_name`,`email`, `password`) VALUES (?,?,?,?);";
+        // prepare the statement
+        $stmt = $db_obj->prepare($sql);
+        // bind the parameters
+        $stmt->bind_param("ssss", $first_name, $last_name, $email, $password);
+        // execute the statement
+        $stmt->execute();
+        // display welcome message
+        $message = 'Congratulations, your account has been successfully created!';
+        echo "<script>alert('$message')</script>";
+        echo "<meta http-equiv='refresh' content='0; URL=http://localhost/index.php?site=login'>";
         die();
     }
 }   
