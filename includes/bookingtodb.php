@@ -43,10 +43,10 @@ if ($anreise >= $abreise){
     $db_obj = new mysqli($host, $user, $password, $database);
     $sql =
         "INSERT INTO `bookings` (`useremail`, `roomtype`,`anreise`, `abreise`, `frue`, `parkplatz`, `haustier`,`status`, `person_id` )
-VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $db_obj->prepare($sql);
-    $stmt-> bind_param("ssssssssi"
-        , $email, $roomtype,$anreise, $abreise, $frue, $parkplatz, $haustier, $status, $personid);
+    $stmt-> bind_param("ssssssssi",
+         $email, $roomtype,$anreise, $abreise, $frue, $parkplatz, $haustier, $status, $personid);
     if ($stmt->execute()) {
         echo "<script>alert('$success')</script>"; }
     else {

@@ -28,7 +28,7 @@ include_once 'nav.php';
   }
 
   // Retrieve the reservation data from the "reservations" table
-  $sql = "SELECT * FROM buchungen";
+  $sql = "SELECT * FROM bookings";
   $result = $conn->query($sql);
 ?>
 <h1 class="mt-5 text-center"> My bookings </h1>
@@ -36,6 +36,7 @@ include_once 'nav.php';
 <table class="table">
     <thead>
         <tr>
+            <th>Booking Nr.</th>
             <th>Email</th>
             <th>Room</th>
             <th>Check-in Date</th>
@@ -55,7 +56,9 @@ include_once 'nav.php';
   if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       echo 
-      "<tr> <td>" . $row["useremail"]. "</td>
+      "
+      <tr> <td>" . $row["booking_id"]. "</td>
+      <td>" . $row["useremail"]. "</td>
       <td>" . $row["roomtype"]. "</td>
       <td>" . $row["anreise"]. "</td>
       <td>" . $row["abreise"]. "</td>

@@ -1,5 +1,6 @@
 <?php
 
+
 if (isset($_POST['login'])) {
 //validate email
     require_once "connection.php";
@@ -15,3 +16,4 @@ if (isset($_POST['login'])) {
     exit();
 }
 
+?>

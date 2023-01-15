@@ -14,8 +14,3 @@
 </html>
 
 
-<!--*machht footer datein*
-    *inputs alles was in der nav.php is aka die header datei*
- Yall ever use your brains??    
--->
-

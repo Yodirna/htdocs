@@ -19,7 +19,7 @@ include_once 'nav.php';
 <body>
   <div class="container center1 text-center">
     <h1>SIGN IN</h1>
-    <form role="form" action="includes/loginincludes.php" method="post"><!--this shit aint posting nowhere bitchass-->
+    <form role="form" action="includes/loginincludes.php" method="post">
       <div class="txt_field">
         <input type="email" name="email" placeholder="Email..." required>
       </div>
@@ -27,25 +27,6 @@ include_once 'nav.php';
         <input type="password" name="password" placeholder="Password..." required>
       </div>
       <input class="btn btn-outline-light" type="submit" name="login" value="LOGIN">
-      <?php
-      //check if error message is not empty and show error message
-      if (!empty($error)) {
-      //store error message in session
-      $_SESSION["error"] = $error;
-      //redirect to login page
-      header("Location: ../login.php");
-      exit();
-      }
-      ?>
-      <?php
-      if (!empty($error)) {
-      echo "<script>alert('$error')</script>";
-      }
-      if (isset($_SESSION["success"])) {
-        echo "<script>alert('".$_SESSION["success"]."')</script>";
-        unset($_SESSION["success"]);
-        }
-      ?>
     </form>
   </div>
 </body>
