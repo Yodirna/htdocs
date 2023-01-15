@@ -1,5 +1,11 @@
 
 <?php
+
+if (!isset($_SESSION)){
+    session_start();
+}
+
+$error = "";
 // check if all required fields are filled
 if(isset($_POST["roomtype"]) && !empty($_POST["roomtype"])
 && isset($_POST["resvon"]) && !empty($_POST["resvon"])
@@ -9,25 +15,25 @@ if(isset($_POST["roomtype"]) && !empty($_POST["roomtype"])
 && isset($_POST["haustier"]) && !empty($_POST["haustier"])) {
 
   // check if the request is a POST request
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    if ($_SERVER["REQUEST_METHOD"] == "POST") 
+    {
     // assign the form values to variables
     $roomtype = $_POST["roomtype"];
-    $resvon = $_POST["resvon"];
-    $resbis = $_POST["resbis"];
+    $anreise = $_POST["resvon"];
+    $abreise = $_POST["resbis"];
     $frue = $_POST["frue"];
     $parkplatz = $_POST["parkplatz"];
     $haustier = $_POST["haustier"];
-
+    $status = "neu";
+    //temporary static email and personid
+    $email = "uwu@gmail.com";
+    $personid = 1;
+    }
 }
-  // successfully created 
-  $message = 'Congratulations, your room has been successfully booked!';
-  echo "<script>alert('$message')</script>";
-  echo "<meta http-equiv='refresh' content='3; URL=http://localhost/index.php?site=zreservieren'>";
-}
 
-if ($arrival_date > $departure_date){
-    $error = "Abreise Datum muss nach dem Anreise Datum sein!";
+if ($anreise >= $abreise){
+    $error = "Abreisedatum darf nicht vor Anreisedatum sein!";
+    echo "<script>alert('$error')</script>";
 }else{
     $success = "Buchung erfolgreich!";
     $host = 'localhost';
@@ -36,13 +42,13 @@ if ($arrival_date > $departure_date){
     $database = 'zreservierung';
     $db_obj = new mysqli($host, $user, $password, $database);
     $sql =
-        "INSERT INTO `zreservierung` (`usermail`, `room_type`,`anreise_datum`, `abreise_datum`,`garage`, `frühstück`, `Tier`, `status`,`fk_person_id`)
+        "INSERT INTO `buchungen` (`useremail`, `roomtype`,`anreise`, `abreise`, `frue`, `parkplatz`, `haustier`,`status`, `person_id` )
 VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
     $stmt = $db_obj->prepare($sql);
     $stmt-> bind_param("ssssssssi"
-        , $email, $room_type,$arrival_date, $departure_date, $Parkplatz, $breakfast, $haustier, $status, $_SESSION["user_id"]);
+        , $email, $roomtype,$anreise, $abreise, $frue, $parkplatz, $haustier, $status, $personid);
     if ($stmt->execute()) {
-        echo ""; }
+        echo "<script>alert('$success')</script>"; }
     else {
         echo "Error";
     }
