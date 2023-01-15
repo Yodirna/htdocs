@@ -1,6 +1,5 @@
 <?php
  include_once 'nav.php';
-   
 ?>
 
 
@@ -15,7 +14,7 @@
     <style> <?php include "css/style.css" ?> </style>
 </head>
 <body>
-        <!--div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                 <img src="img/lobby.jpg" class="d-block w-100"> 
@@ -37,29 +36,10 @@
             </button>
             </div>
         </div>
-    
 
-    <!--?php
-
-
-        // fetch current "site" (or set to "home" if not defined)
-
-
-        $site = $_GET["site"] ?? "home";//what the fuck?????????? was is des fürn scheiß amk
-
-        // for security reason:  check if $site is in a list of available sites
-        $sites = [ "home", "news", "booking", "support", "login", "signup", "help", "logout", "imprint", "faq", "account", "zreservieren", "error"];
-        if (!in_array($site, $sites)) {
-            $error = "Seite nicht gefunden - " . $site;//how???????? how does it not find the god damn home page
-            $site = "error";    
-        }
-        // render nav bar
-        include_once "nav.php";//bitchass das machtma am anfang!!!!!!!!!!!!
-    
-
-        // render site here ...
-        include_once $site . ".php";//dude ong was geht hier hab
-        include_once "footer.php" ?-->
+        <?php
+        include_once 'includes/footer.php'
+        ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>

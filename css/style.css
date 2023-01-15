@@ -8,6 +8,12 @@ body {
   flex-direction: column;
 }
 
+tr {
+  border-bottom: 1px solid rgb(7, 7, 7);
+}
+
+tr:hover {background-color: #D6EEEE;}
+
 body p{
   font-size: 100px;
 }

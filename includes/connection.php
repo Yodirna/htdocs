@@ -2,8 +2,8 @@
 
 $servername = "localhost";
 $dBUsername = "root";
-$dBPassword = "";
-$dBName = "test";
+$dBPassword = "hotel123";
+$dBName = "zreservierung";
 
 $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
 

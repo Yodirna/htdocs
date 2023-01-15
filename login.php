@@ -50,3 +50,7 @@ include_once 'nav.php';
   </div>
 </body>
 </html>
+
+<?php
+include_once 'includes/footer.php';
+?>
