@@ -1,4 +1,9 @@
-<style><?php include "imprintstyle.css" ?></style>
+
+<?php
+    include_once 'nav.php';
+?>
+
+<style><?php include "css/style.css" ?></style>
 
 <div class="even-columns">
     <div class="col">
@@ -24,3 +29,6 @@
         <h3>Ridoy Rahman (CEO)</h3>
     </div>
 </div>
+<?php
+include_once 'includes/footer.php';
+?>

@@ -1,13 +1,18 @@
-<style><?php include "faq.css" ?></style>
+<?php
+    include_once 'nav.php';
+?>
+
+<style><?php include "css/style.csscss" ?></style>
 
 <div class="faq-text">
+<h1>FAQ</h1>
     <div class="faqtext">
-        <p><h1>FAQ</h1>
+        <p>
         Wo finde ich das Impressum?<br>
-        Unten.<br>
+        Unten.<br><!--insane-->
         Wo finde ich die FAQ?<br>
-        Unten.<br>
-        Frage 3<br>
+        Unten.<br><!--DU BIST SCHO DA-->
+        Frage 3<br><!--me when-->
         Antwort 3<br>
         Frage 4<br>
         Antwort 4<br></p>

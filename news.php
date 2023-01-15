@@ -1,3 +1,7 @@
+<?php
+  include_once 'nav.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +13,6 @@
   <body>
     <h1>News</h1>
     <?php
-      session_start();
       if (isset($_SESSION['userid']) && $_SESSION['userid'] == "admin") {
         // Display file upload form for admin user
         ?>

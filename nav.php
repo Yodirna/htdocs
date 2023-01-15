@@ -1,3 +1,16 @@
+<?php
+session_start();
+include_once 'includes/functions.php';
+include_once 'includes/connection.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
 <nav class="navbar navbar-dark fixed-top navbar-expand-lg" style="background-color: #B85042;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">HILLTON</a>
@@ -7,37 +20,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavButton">
                 <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                            <a class="nav-link <?= ($site == "news") ? "active" : "" ?>" href="?site=news">NEWS</a>
-                        </li>
-                    <?php if (isset($_SESSION['user_id'])) { ?>
-                        <li class="nav-item">
-                            <a class="nav-link <?= ($site == "check_bookings") ? "active" : "" ?>" href="#">BOOK A ROOM</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link <?= ($site == "support_tickets") ? "active" : "" ?>" href="#">MY BOOKINGS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link <?= ($site == "upload") ? "active" : "" ?>" href="?site=upload">MY ACCOUNT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link <?= ($site == "logout") ? "active" : "" ?>" href="?site=logout">LOGOUT</a>
-                        </li>
-                    <?php } else { ?>
-                        <li class="nav-item">
-                            <a class="nav-link <?= ($site == "booking") ? "active" : "" ?>" href="?site=booking">BOOKING</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link <?= ($site == "support") ? "active" : "" ?>" href="?site=support">SUPPORT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link <?= ($site == "login") ? "active" : "" ?>" href="?site=login">LOGIN</a>
-                        </li>
-                    <?php } ?>
+                <li class="nav-item"><a href="news.php" class="nav-link">NEWS</a></li>
+                <li class="nav-item"><a href="signup.php" class="nav-link">SIGNUP</a></li>
+                <li class="nav-item"><a href="login.php" class="nav-link">LOGIN</a></li>
+                <li class="nav-item"><a href="zreservieren.php" class="nav-link">BOOKING</a></li>
+                <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
+                    <li class="nav-item"><a href="logout.php" class="nav-link">LOGOUT</a></li>
+                    <li class="nav-item"><a href="account.php" class="nav-link">MY ACCOUNT</a></li>
+                <?php } ?>
                 </ul>
             </div>
         </div>
 </nav>
+
+
+
+
+
+
 
 
 

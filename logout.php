@@ -1,6 +1,6 @@
 <?php
 
-unset($_SESSION['userid']);
+unset($_SESSION['logged_in']);
 session_destroy();
 $message = 'Successfully logged out.';
 echo "<script>alert('$message')</script>"; 
