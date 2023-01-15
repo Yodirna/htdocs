@@ -42,7 +42,7 @@ if ($anreise >= $abreise){
     $database = 'zreservierung';
     $db_obj = new mysqli($host, $user, $password, $database);
     $sql =
-        "INSERT INTO `buchungen` (`useremail`, `roomtype`,`anreise`, `abreise`, `frue`, `parkplatz`, `haustier`,`status`, `person_id` )
+        "INSERT INTO `bookings` (`useremail`, `roomtype`,`anreise`, `abreise`, `frue`, `parkplatz`, `haustier`,`status`, `person_id` )
 VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
     $stmt = $db_obj->prepare($sql);
     $stmt-> bind_param("ssssssssi"
