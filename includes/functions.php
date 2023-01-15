@@ -55,11 +55,9 @@ function userlogin($conn, $email, $password){
     if (password_verify($password, $passwordHashed)){
         //start session
         session_start();
-        $message = 'adasdas!';
-        echo "<script>alert('$message')</script>";
         $_SESSION["email"] = $checkuser["email"];
         $_SESSION['logged_in'] = true;
-        $message = $_SESSION['logged_in'];
+        $message = "Welcome back!";
         echo "<script>alert('$message')</script>";
         //header("Location: ../index.php");
         echo "<meta http-equiv='refresh' content='0; URL=http://localhost/index.php'>";
@@ -67,7 +65,6 @@ function userlogin($conn, $email, $password){
     }else{
         $message = 'Password is wrong!';
         echo "<script>alert('$message')</script>";
-        exit();
     }
 }  
 ?>
