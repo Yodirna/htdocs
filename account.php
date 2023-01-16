@@ -17,5 +17,12 @@ include_once 'nav.php';
   </style>
 </head>
 <body>
+  <?php
+  if(isset($_SESSION['logged_in']) && $_SESSION['usertype'] == 'user')
+  { ?>
+
+  <?php
+  }
+  ?>
 <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores totam quaerat sint minima eaque at beatae explicabo mollitia omnis officia culpa unde, saepe doloremque optio enim recusandae tempora, modi fugiat.</h1>
 </body>

@@ -65,6 +65,7 @@ function userlogin($conn, $email, $password){
     }else{
         $message = 'Password is wrong!';
         echo "<script>alert('$message')</script>";
+        echo "<meta http-equiv='refresh' content='0; URL=http://localhost/login.php'>";
     }
 }  
 ?>

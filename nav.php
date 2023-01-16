@@ -23,8 +23,9 @@ include_once 'includes/connection.php';
                 <li class="nav-item"><a href="news.php" class="nav-link">NEWS</a></li>
                 <li class="nav-item"><a href="signup.php" class="nav-link">SIGNUP</a></li>
                 <li class="nav-item"><a href="login.php" class="nav-link">LOGIN</a></li>
-                <li class="nav-item"><a href="booking.php" class="nav-link">BOOKING</a></li>
+                
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
+                    <li class="nav-item"><a href="booking.php" class="nav-link">BOOKING</a></li>
                     <li class="nav-item"><a href="logout.php" class="nav-link">LOGOUT</a></li>
                     <li class="nav-item"><a href="account.php" class="nav-link">MY ACCOUNT</a></li>
                 <?php } ?>
